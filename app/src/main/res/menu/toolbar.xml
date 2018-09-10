@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/backup"
+        android:icon="@drawable/ic_backup"
+        android:title="上传"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/ic_delete"
+        android:title="删除"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/settings"
+        android:icon="@drawable/ic_settings"
+        android:title="设置"
+        app:showAsAction="never"/>
+</menu>
+
+    <!--Well, oral presentation requires comprehensive abilities, so I definitely consider it better for
+        students.-->
+    <!--For e.g. when I did a presentation last time, I thought through the form of the presentation in
+    order to make it more contagious to the audience, like, I added some sound and light effects to those
+    slides, which is not required in the process of writing a paper in isolation.-->
+    <!--What’s more, I had a one-on-one discussion with my professor to perfect my content, which was a
+    good opportunity to exercise my communication skills, also a good chance to leave a good impression on
+    the professor.-->
+    <!--Speaking in front of a large audience once was my weak point, however, after my first attempt,
+    it was never a problem to me.-->
+
+    <!--Advertisements absolutely are reflections of social changes.-->
+    <!--To be specific, I can see the increase of life quality. For e.g. if I wanted to buy a shampoo in
+     the past in China, there were only few brands I could choose from; yet today, thousands of commercials
+      showing all sorts of brands keep popping up on the TV screen, I can choose whatever I want based on
+      my personal need.-->
+    <!--Also, there was hardly any public-interest advertisement on TV or magazines; however, if I take a
+    close look at today’s mass media in China, I can see various public-interest ads calling for people
+    to protect the environment. -->
+
+    <!--I agree with this statement that reading novels is far more inciting than watching movies. I was
+    often hooked by those ups and downs in the crime novels, and always obsessed with the blue prints that
+     science fictions depict for us. For e.g. I recently read a novel written by a Japanese writer, it’s
+     really a good exercise for my imagination, it offers more space for me to visualize all the scenes
+     than the movie does, I was deeply involved in it, and really got great pleasure.-->
+    <!--Besides, the director of a movie often uses a lot of methods to narrow down the interpretation of
+    the figures, however, in a novel, you have the freedom to interpret them from your own perspective.-->
+
+    <!--I think parents have the responsibility to lead their children to watch TV, because TV programs are
+     filled with violence and contents which are not suitable for children, and kids are extremely easy to
+     be misled by those contents. For e.g. if they are continuously exposed to the violence, they will
+     potentially bully other kids; if they overly watch advertisements of junk food, they may give up the
+     healthy diets that are beneficial for them, turning to relying on deep-fried food. Only with the
+     supervision of the parents, can they be carefully controlled, or protected from the harmful programs,
+     because adults are mature enough to help them tell right from wrong.-->
+
+    <!--Cell phones touch all aspects of our lives, but from my standpoint, negative effects outweigh the
+    positive effects.-->
+    <!--First, cell phones provide people with a platform to show off their own life, for e.g. the wealthy
+    people often post the pictures of their beautiful selfies or luxury goods, creating a pretty surface
+    atmosphere among the society.-->
+    <!--In addition, youngsters are being highly distracted from their study by the meaningless and misleading
+    information, the apps and games on the cell phones are stealing time away from them, and they can’t
+    focus on what they mean to be doing and are becoming increasingly fickle.-->
+
+    <!--The person I’d like to talk with most is my friend Jennifer. she is really an excellent story teller.
+    Whenever we met, she always brought me some interesting stories which might be something happened with
+    my other friends, or celebrity gossip. The way she tells stories is really unique and dramatic, her
+    facial expressions and tones and hand gestures often crack me up. I can’t help being attracted by her
+    magnetic and optimistic personality.-->
+    <!--Besides, sometimes we also talked about new life styles or eye-opening new technologies, which indeed
+    expanded my horizons. Talking with Jennifer brings me pleasure and positive energy, also some inspiration
+    about life, so that’s why I like to talk with her most.-->
+
+    <!--My sister is an interesting person whose personality is totally different from mine. She was brought
+    up in America, and quite straightforward when dealing with relationships. For e.g. when she has different
+    opinions with others, she often voices out her ideas directly, and tries to persuade others with convincing
+    words. While as for me, I was raised up in a traditional Chinese family, so under the influence of Chinese
+    culture, I am quite indirect and reserved when I’m at odds with others. Usually, I instinctively avoid
+    conflict, whereas my sister is really good at looking for it.-->
+
+    <!--When working in a team, I prefer people who are easy to communicate with, because you know in teamwork,
+     when facing difficulties, we need to sit together and discuss how to overcome them, with an easygoing
+     co-worker, there wouldn’t be any walls set up between us , so problems would be solved efficiently.-->
+    <!--Additionally, a good co-worker should dare to express disagreement when making critical decisions; he
+    shouldn’t only be an echo-chamber with me, but an incisive person who can provide some constructive
+    suggestions to the whole team.-->
+
+    <!--For me, a good parent should first be tolerant, so the children won’t fear being blamed too much for
+    committing small mistakes, thus the loose atmosphere in the family allows children to be bold enough to
+    explore what they are curious about. For e.g. I remember when I took the clock apart, my father didn’t
+    scold me, which cultivated my interest in mechanism .-->
+    <!--Besides, a good parent should have sharp eyes to discover the greatness and uniqueness in their
+    children. For e.g. if not for the support and cultivation from his father, the well-known pianist Lang
+    Lang wouldn’t have achieved today’s success.-->
+
+
+
+
+
+
