@@ -75,7 +75,14 @@ public class Fragment2 extends Fragment{
             }
         });
 
-
+        CardView study_video = getActivity().findViewById(R.id.study_video);
+        study_video.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), VideoList.class);
+                startActivity(intent);
+            }
+        });
     }
 
     public void initEquipmentList(){

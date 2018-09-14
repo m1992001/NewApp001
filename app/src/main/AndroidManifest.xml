@@ -3,13 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.newapp">
 
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="16"
+        tools:overrideLibrary="cn.jzvd" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-sdk android:minSdkVersion="15"
-        android:targetSdkVersion="16"
-        tools:overrideLibrary="cn.jzvd"/>
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -43,7 +45,8 @@
             android:theme="@style/AppTheme.Dark" />
         <activity android:name=".ContentActivity" />
         <activity android:name=".MedicalEquipment" />
-        <activity android:name=".Equip_item_content"></activity>
+        <activity android:name=".Equip_item_content" />
+        <activity android:name=".VideoList"></activity>
     </application>
 
 </manifest>
