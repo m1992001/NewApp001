@@ -44,16 +44,27 @@ public class Fragment1 extends Fragment{
     }
 
     @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-//        getInitContent();
+    public void onStart() {
+        super.onStart();
         contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
         RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
         contentAdapter = new ContentAdapter(contentList);
         recyclerView.setAdapter(contentAdapter);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+//        getInitContent();
+//        contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
+//        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//        contentAdapter = new ContentAdapter(contentList);
+//        recyclerView.setAdapter(contentAdapter);
 
         swipeRefresh = getActivity().findViewById(R.id.swipe_refresh);
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
