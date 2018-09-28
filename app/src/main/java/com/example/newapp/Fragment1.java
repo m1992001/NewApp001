@@ -1,6 +1,7 @@
 package com.example.newapp;
 
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -10,8 +11,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,6 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,9 +29,9 @@ import okhttp3.Call;
 import okhttp3.Response;
 
 
-public class Fragment1 extends Fragment {
+public class Fragment1 extends Fragment{
 
-    private List<Content> contentList = new ArrayList<>();
+    private ArrayList<Content> contentList = new ArrayList<>();
     private SwipeRefreshLayout swipeRefresh;
     private ContentAdapter contentAdapter;
     private StringBuffer result;
@@ -47,7 +47,8 @@ public class Fragment1 extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        getInitContent();
+//        getInitContent();
+        contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
         RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
         recyclerView.setLayoutManager(layoutManager);
@@ -107,28 +108,28 @@ public class Fragment1 extends Fragment {
         }).start();
     }
 
-    private void getInitContent() {
-        HttpUtil.getHttpRequest(HttpUtil.IP + "/app/news", new okhttp3.Callback() {
-            @Override
-            public void onFailure(Call call, IOException e) {
-                Log.d("Fragment1", "服务器访问失败");
-            }
-
-            @Override
-            public void onResponse(Call call, Response response) {
-                try {
-                    result = new StringBuffer();
-                    result.append(response.body().string());
-//                    Log.d("Fragment1", "result; " + result.toString());
-                    parseJsonObject(result.toString());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
-
-
+//    private void getInitContent() {
+//        HttpUtil.getHttpRequest(HttpUtil.IP + "/app/news", new okhttp3.Callback() {
+//            @Override
+//            public void onFailure(Call call, IOException e) {
+//                Log.d("Fragment1", "服务器访问失败");
+//            }
+//
+//            @Override
+//            public void onResponse(Call call, Response response) {
+//                try {
+//                    result = new StringBuffer();
+//                    result.append(response.body().string());
+////                    Log.d("Fragment1", "result; " + result.toString());
+//                    parseJsonObject(result.toString());
+//                } catch (IOException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//        });
+//    }
+//
+//
     public void parseJsonObject(String jsonData) {
         try {
             JSONArray jsonArray = new JSONArray(jsonData);
@@ -150,11 +151,11 @@ public class Fragment1 extends Fragment {
         }
     }
 
-    @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.toolbar, menu);
-    }
+//    @Override
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        super.onCreateOptionsMenu(menu, inflater);
+//        inflater.inflate(R.menu.toolbar, menu);
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

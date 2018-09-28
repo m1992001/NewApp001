@@ -1,5 +1,7 @@
 package com.example.newapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +14,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +27,7 @@ import java.util.List;
 public class Fragment3 extends Fragment {
 
     private List<MyListItem> myListItems = new ArrayList<>();
+    private Context mContext;
 
     @Nullable
     @Override
@@ -39,7 +43,7 @@ public class Fragment3 extends Fragment {
 
         String username1 = (String) getArguments().get("input_username");
         String userclass1 = (String) getArguments().get("reg_class");
-        Log.d("Fragment3"," ****** " + username1 + "  " + userclass1);
+        Log.d("Fragment3", " ****** " + username1 + "  " + userclass1);
         TextView username = getActivity().findViewById(R.id.username);
         TextView userclass = getActivity().findViewById(R.id.user_class);
         username.setText(username1);
@@ -53,15 +57,37 @@ public class Fragment3 extends Fragment {
 
         initItem();
         ItemAdapter adapter = new ItemAdapter(getContext(), R.layout.my_item, myListItems);
-        ListView listView = getActivity().findViewById(R.id.my_item_list);
+        final ListView listView = getActivity().findViewById(R.id.my_item_list);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                MyListItem myListItem = myListItems.get(i);
+                switch (myListItem.getItemName()) {
+                    case "报表数据分析":
+                        Log.d("Switch",myListItem.getItemName());
+                        Intent intent = new Intent(getActivity(),WebView1.class);
+                        startActivity(intent);
+                        break;
+                    case "康复效率分析":
+                        Toast.makeText(getContext(), myListItem.getItemName(), Toast.LENGTH_LONG);
+                        Log.d("Switch",myListItem.getItemName());
+                        break;
+                    case "康复投入信息":
+                        Toast.makeText(getContext(), myListItem.getItemName(), Toast.LENGTH_LONG);
+                        Log.d("Switch",myListItem.getItemName());
+                        break;
+                    default:
+                }
+            }
+        });
 
     }
 
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
-        inflater.inflate(R.menu.toolbar_my, menu);
-    }
+//    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+//        super.onCreateOptionsMenu(menu, inflater);
+//        inflater.inflate(R.menu.toolbar_my, menu);
+//    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -80,17 +106,17 @@ public class Fragment3 extends Fragment {
         return true;
     }
 
-    private void initItem(){
+    private void initItem() {
         MyListItem item1 = new MyListItem("我的消息", R.drawable.my_info);
         myListItems.add(item1);
-        MyListItem item2 = new MyListItem("报表数据分析",R.drawable.my_data);
+        MyListItem item2 = new MyListItem("报表数据分析", R.drawable.my_data);
         myListItems.add(item2);
         MyListItem item3 = new MyListItem("康复效率分析", R.drawable.my_productivity);
         myListItems.add(item3);
         MyListItem item4 = new MyListItem("康复投入信息", R.drawable.my_health);
         myListItems.add(item4);
-        MyListItem item5 = new MyListItem("设置", R.drawable.my_setting);
-        myListItems.add(item5);
+//        MyListItem item5 = new MyListItem("设置", R.drawable.my_setting);
+//        myListItems.add(item5);
 
     }
 }

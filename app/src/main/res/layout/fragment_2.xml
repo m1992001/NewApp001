@@ -38,15 +38,17 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp">
+        android:orientation="vertical"
+        android:layout_marginTop="6dp">
 
         <android.support.v7.widget.CardView
             android:id="@+id/medical_equipment"
-            android:layout_width="0dp"
+            android:layout_gravity="center"
+            app:cardBackgroundColor="#e8eaf6"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
+            android:layout_margin="5dp"
             app:cardCornerRadius="6dp">
 
                 <LinearLayout
@@ -55,28 +57,33 @@
                     android:orientation="vertical">
                     
                     <ImageView
-                        android:src="@drawable/apple"
+                        android:src="@drawable/medical_equipment"
                         android:layout_width="match_parent"
-                        android:layout_height="100dp"
+                        android:layout_height="170dp"
+                        android:layout_margin="5dp"
                         android:scaleType="centerCrop"/>
                     
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:gravity="center_horizontal"
-                        android:layout_margin="5dp"
-                        android:textSize="16sp"
+                        android:layout_gravity="center"
+                        android:layout_margin="2dp"
+                        android:textStyle="bold"
+                        android:textSize="18sp"
                         android:text="医学设备介绍"/>
             </LinearLayout>
 
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:layout_gravity="center"
             android:id="@+id/study_video"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
+            app:cardBackgroundColor="#e8eaf6"
             app:cardCornerRadius="6dp">
 
             <LinearLayout
@@ -85,17 +92,20 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:src="@drawable/banana"
                     android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"/>
+                    android:layout_height="170dp"
+                    android:layout_margin="5dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/study_video" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:layout_margin="5dp"
-                    android:textSize="16sp"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
                     android:text="学习视频"/>
             </LinearLayout>
 
@@ -103,71 +113,139 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="10dp">
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="20dp">-->
 
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="6dp">
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/medical_equipment"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--app:cardCornerRadius="6dp">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
 
-                <ImageView
-                    android:src="@drawable/apple"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"/>
+                <!--<ImageView-->
+                    <!--android:src="@drawable/apple"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:scaleType="centerCrop"/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_margin="5dp"
-                    android:textSize="16sp"
-                    android:text="在线知识库"/>
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="医学设备介绍"/>-->
+            <!--</LinearLayout>-->
 
-        </android.support.v7.widget.CardView>
+        <!--</android.support.v7.widget.CardView>-->
 
-        <android.support.v7.widget.CardView
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            app:cardCornerRadius="6dp">
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:id="@+id/study_video"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="5dp"-->
+            <!--app:cardCornerRadius="6dp">-->
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
 
-                <ImageView
-                    android:src="@drawable/banana"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
-                    android:scaleType="centerCrop"/>
+                <!--<ImageView-->
+                    <!--android:src="@drawable/banana"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:scaleType="centerCrop"/>-->
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    android:layout_margin="5dp"
-                    android:textSize="16sp"
-                    android:text="康复讲堂"/>
-            </LinearLayout>
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="学习视频"/>-->
+            <!--</LinearLayout>-->
 
-        </android.support.v7.widget.CardView>
+        <!--</android.support.v7.widget.CardView>-->
 
-    </LinearLayout>
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_marginTop="10dp">-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--app:cardCornerRadius="6dp">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<ImageView-->
+                    <!--android:src="@drawable/apple"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:scaleType="centerCrop"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="在线知识库"/>-->
+            <!--</LinearLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+        <!--<android.support.v7.widget.CardView-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_weight="1"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_margin="10dp"-->
+            <!--app:cardCornerRadius="6dp">-->
+
+            <!--<LinearLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="vertical">-->
+
+                <!--<ImageView-->
+                    <!--android:src="@drawable/banana"-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="100dp"-->
+                    <!--android:scaleType="centerCrop"/>-->
+
+                <!--<TextView-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:gravity="center_horizontal"-->
+                    <!--android:layout_margin="5dp"-->
+                    <!--android:textSize="16sp"-->
+                    <!--android:text="康复讲堂"/>-->
+            <!--</LinearLayout>-->
+
+        <!--</android.support.v7.widget.CardView>-->
+
+    <!--</LinearLayout>-->
 
 
 </LinearLayout>

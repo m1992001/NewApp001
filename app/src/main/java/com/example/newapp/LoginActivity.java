@@ -13,11 +13,16 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
+import okhttp3.Call;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -35,6 +40,8 @@ public class LoginActivity extends AppCompatActivity {
 
     OkHttpClient client = new OkHttpClient();
     LoginBean loginBean = new LoginBean();
+    private ArrayList<Content> contentList = new ArrayList<>();
+    private StringBuffer result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View view) {
                 name1 = input_username.getText().toString().trim();
                 psd1 = input_userpsd.getText().toString().trim();
-
+                getInitContent();
                 postRequest(name1,psd1);
 
             }
@@ -98,6 +105,8 @@ public class LoginActivity extends AppCompatActivity {
                                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                         intent.putExtra("input_username",name1);
                                         intent.putExtra("reg_class",reg_class);
+                                        Log.d("News", contentList.toString());
+                                        intent.putExtra("news", contentList);
                                         startActivity(intent);
                                         finish();
                                     }
@@ -122,5 +131,48 @@ public class LoginActivity extends AppCompatActivity {
             }
         }).start();
 
+    }
+
+    private void getInitContent() {
+        HttpUtil.getHttpRequest(HttpUtil.IP + "/app/news", new okhttp3.Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("Fragment1", "服务器访问失败");
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) {
+                try {
+                    result = new StringBuffer();
+                    result.append(response.body().string());
+//                    Log.d("Fragment1", "result; " + result.toString());
+                    parseJsonObject(result.toString());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+
+    public void parseJsonObject(String jsonData) {
+        try {
+            JSONArray jsonArray = new JSONArray(jsonData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+//                Log.d("Fragment1", jsonObject.toString());
+                String title = jsonObject.getString("title");
+                String picture = jsonObject.getString("img");
+//                String con = jsonObject.getString("con");
+//                Content content = new Content(title, picture, con);
+                Content content = new Content(title,picture);
+                contentList.add(content);
+//                Log.d("Fragment1","title: " + title);
+//                Log.d("Fragment1","picture: " + picture);
+//                Log.d("Fragment1","content: " + con);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 }

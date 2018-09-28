@@ -21,32 +21,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!-- <activity -->
-        <!-- android:name=".LoginActivity" -->
-        <!-- android:theme="@style/AppTheme.Dark"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.MAIN" /> -->
-
-
-        <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true"
+            android:theme="@style/AppTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity" />
-        <!-- <activity android:name=".MainActivity" /> -->
+
+        <!--<activity android:name=".MainActivity">-->
+        <!--<intent-filter>-->
+        <!--<action android:name="android.intent.action.MAIN" />-->
+
+        <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity android:name=".LoginActivity" />-->
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity android:name=".ContentActivity" />
         <activity android:name=".MedicalEquipment" />
         <activity android:name=".Equip_item_content" />
-        <activity android:name=".VideoList"></activity>
+        <activity android:name=".VideoList"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"/>
+        <activity android:name=".WebView1"></activity>
     </application>
 
 </manifest>

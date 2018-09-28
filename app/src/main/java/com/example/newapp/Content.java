@@ -1,6 +1,8 @@
 package com.example.newapp;
 
-public class Content {
+import java.io.Serializable;
+
+public class Content implements Serializable{
     private String name;
     private String imageId;
     private String contentId = "";
