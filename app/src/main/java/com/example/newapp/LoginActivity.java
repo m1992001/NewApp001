@@ -60,7 +60,7 @@ public class LoginActivity extends AppCompatActivity {
                 name1 = input_username.getText().toString().trim();
                 psd1 = input_userpsd.getText().toString().trim();
                 getInitContent();
-                postRequest(name1,psd1);
+//                postRequest(name1,psd1);
 
             }
         });
@@ -97,8 +97,9 @@ public class LoginActivity extends AppCompatActivity {
                         Log.d("response",state);
                         try {
                             final JSONObject stateJson = new JSONObject(state);
-                            final String reg_class = (String) stateJson.get("title");
+//                            Log.d("Login", stateJson.get("flag").toString());
                             if(stateJson.get("flag").equals("success")){
+                                final String reg_class = (String) stateJson.get("title");
                                 LoginActivity.this.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -112,6 +113,7 @@ public class LoginActivity extends AppCompatActivity {
                                     }
                                 });
                             }else{
+                                Log.d("Login", stateJson.get("flag").toString());
                                 LoginActivity.this.runOnUiThread(new Runnable() {
                                     @Override
                                     public void run() {
@@ -147,6 +149,12 @@ public class LoginActivity extends AppCompatActivity {
                     result.append(response.body().string());
 //                    Log.d("Fragment1", "result; " + result.toString());
                     parseJsonObject(result.toString());
+                    runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            postRequest(name1,psd1);
+                        }
+                    });
                 } catch (IOException e) {
                     e.printStackTrace();
                 }

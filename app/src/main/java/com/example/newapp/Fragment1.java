@@ -40,18 +40,20 @@ public class Fragment1 extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_1, container, false);
+        Log.d("FragmentLife", "onCreateView");
         return view;
     }
 
     @Override
-    public void onStart() {
-        super.onStart();
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
-        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-        recyclerView.setLayoutManager(layoutManager);
-        contentAdapter = new ContentAdapter(contentList);
-        recyclerView.setAdapter(contentAdapter);
+//        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
+//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+//        recyclerView.setLayoutManager(layoutManager);
+//        contentAdapter = new ContentAdapter(contentList);
+//        recyclerView.setAdapter(contentAdapter);
+//        Log.d("FragmentLife", "onCreate");
     }
 
     @Override
@@ -60,11 +62,12 @@ public class Fragment1 extends Fragment{
 
 //        getInitContent();
 //        contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
-//        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//        contentAdapter = new ContentAdapter(contentList);
-//        recyclerView.setAdapter(contentAdapter);
+        Log.d("FragmentLife", contentList.toString());
+        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
+        recyclerView.setLayoutManager(layoutManager);
+        contentAdapter = new ContentAdapter(contentList);
+        recyclerView.setAdapter(contentAdapter);
 
         swipeRefresh = getActivity().findViewById(R.id.swipe_refresh);
         swipeRefresh.setColorSchemeResources(R.color.colorPrimary);
