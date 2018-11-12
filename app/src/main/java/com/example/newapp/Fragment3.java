@@ -71,10 +71,12 @@ public class Fragment3 extends Fragment {
                         break;
                     case "康复效率分析":
                         Toast.makeText(getContext(), myListItem.getItemName(), Toast.LENGTH_LONG);
+                        Intent intent1 = new Intent(getActivity(),WebView2.class);
                         Log.d("Switch",myListItem.getItemName());
                         break;
                     case "康复投入信息":
                         Toast.makeText(getContext(), myListItem.getItemName(), Toast.LENGTH_LONG);
+                        Intent intent2 = new Intent(getActivity(),WebView3.class);
                         Log.d("Switch",myListItem.getItemName());
                         break;
                     default:
@@ -107,13 +109,13 @@ public class Fragment3 extends Fragment {
     }
 
     private void initItem() {
-        MyListItem item1 = new MyListItem("我的消息", R.drawable.my_info);
-        myListItems.add(item1);
-        MyListItem item2 = new MyListItem("报表数据分析", R.drawable.my_data);
+//        MyListItem item1 = new MyListItem("我的消息", R.drawable.my_info);
+//        myListItems.add(item1);
+        MyListItem item2 = new MyListItem("病人治疗信息", R.drawable.my_data);
         myListItems.add(item2);
-        MyListItem item3 = new MyListItem("康复效率分析", R.drawable.my_productivity);
+        MyListItem item3 = new MyListItem("医生工作量信息", R.drawable.my_productivity);
         myListItems.add(item3);
-        MyListItem item4 = new MyListItem("康复投入信息", R.drawable.my_health);
+        MyListItem item4 = new MyListItem("本月康复信息", R.drawable.my_health);
         myListItems.add(item4);
 //        MyListItem item5 = new MyListItem("设置", R.drawable.my_setting);
 //        myListItems.add(item5);

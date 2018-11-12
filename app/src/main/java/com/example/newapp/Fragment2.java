@@ -154,10 +154,19 @@ public class Fragment2 extends Fragment{
                 answer = new StringBuffer();
                 String name = query;
                 answer.append(response.body().string());
-                Log.d("Answer",answer.toString());
-                if (answer.equals(null)){
-                    Toast.makeText(getActivity(),"搜索没有结果",Toast.LENGTH_LONG).show();
+                String strAnswer = answer.toString();
+                Log.d("Answer",strAnswer);
+                Log.d("Answer","" + strAnswer.length());
+                if ("0".equals(strAnswer.trim())){
+                    Log.d("Answer", "Toast");
+                    getActivity().runOnUiThread(new Runnable() {
+                        @Override
+                        public void run() {
+                            Toast.makeText(getActivity(),"搜索没有结果",Toast.LENGTH_LONG).show();
+                        }
+                    });
                 }else{
+                    Log.d("Answer", "------------");
                     parseJsonQuery(name, answer.toString());
                 }
             }
