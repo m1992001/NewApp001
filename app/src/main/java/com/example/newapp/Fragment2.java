@@ -31,12 +31,16 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 
-public class Fragment2 extends Fragment{
+public class Fragment2 extends Fragment {
 
     private MaterialSearchView searchView;
+    private StringBuffer videoResult;
     private StringBuffer result;
     private StringBuffer answer;
     private ArrayList<String> equip_list = new ArrayList<>();
+    private ArrayList<String> video_name_list = new ArrayList<>();
+    private ArrayList<String> video_pic_list = new ArrayList<>();
+    private ArrayList<String> video_addr_list = new ArrayList<>();
 
     @Nullable
     @Override
@@ -55,8 +59,6 @@ public class Fragment2 extends Fragment{
         Toolbar search = getActivity().findViewById(R.id.search_toolbar);
         search.setTitle("  ");
         ((AppCompatActivity) getActivity()).setSupportActionBar(search);
-
-
     }
 
     @Override
@@ -79,7 +81,7 @@ public class Fragment2 extends Fragment{
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                Log.d("Search",newText);
+                Log.d("Search", newText);
                 return false;
             }
         });
@@ -96,17 +98,69 @@ public class Fragment2 extends Fragment{
         study_video.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getActivity(), VideoList.class);
-                startActivity(intent);
+//                Intent intent = new Intent(getActivity(), VideoList.class);
+//                startActivity(intent);
+                initVideoContent();
             }
         });
     }
 
-    public void initEquipmentList(){
+    public void initVideoContent() {
+        HttpUtil.getHttpRequest(HttpUtil.IP + "/app/video", new Callback() {
+            @Override
+            public void onFailure(Call call, IOException e) {
+                Log.d("Fragment2", "访问服务器失败");
+            }
+
+            @Override
+            public void onResponse(Call call, Response response) throws IOException {
+                try {
+                    videoResult = new StringBuffer();
+                    videoResult.append(response.body().string());
+                    videoContentParseJsonObject(videoResult.toString());
+//                    Log.d("Video", "video_result: " + videoResult.toString());
+//                    Log.d("Video", video_addr_list.toString() + "--" + video_pic_list.toString() + "--"
+//                     + video_name_list.toString());
+                    VideoConstant.videoTitles = video_name_list.toArray(new String[] {});
+                    VideoConstant.videoThumbs = video_pic_list.toArray(new String[] {});
+                    VideoConstant.videoUrls = video_addr_list.toArray(new String[] {});
+                    Intent intent = new Intent(getActivity(), VideoList.class);
+                    startActivity(intent);
+                    video_addr_list.clear();
+                    video_name_list.clear();
+                    video_pic_list.clear();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    public void videoContentParseJsonObject(String jsonData) {
+        try {
+            Log.d("Video", jsonData);
+            JSONArray jsonArray = new JSONArray(jsonData);
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String video_name = jsonObject.getString("video_name");
+                String video_addr = HttpUtil.IP + jsonObject.getString("video_addr");
+                String video_pic = HttpUtil.IP + jsonObject.getString("video_pic");
+                Log.d("video_addr", video_addr);
+                Log.d("video_pic", video_pic);
+                video_name_list.add(video_name);
+                video_addr_list.add(video_addr);
+                video_pic_list.add(video_pic);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void initEquipmentList() {
         HttpUtil.getHttpRequest(HttpUtil.IP + "/app/equip", new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("Fragment2","访问服务器失败");
+                Log.d("Fragment2", "访问服务器失败");
             }
 
             @Override
@@ -142,11 +196,11 @@ public class Fragment2 extends Fragment{
         }
     }
 
-    public void initEquipmentItem(final String query){
+    public void initEquipmentItem(final String query) {
         HttpUtil.getHttpRequest(HttpUtil.IP + "/app/equip/" + query, new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                Log.d("Fragment2","访问服务器失败");
+                Log.d("Fragment2", "访问服务器失败");
             }
 
             @Override
@@ -155,17 +209,17 @@ public class Fragment2 extends Fragment{
                 String name = query;
                 answer.append(response.body().string());
                 String strAnswer = answer.toString();
-                Log.d("Answer",strAnswer);
-                Log.d("Answer","" + strAnswer.length());
-                if ("0".equals(strAnswer.trim())){
+                Log.d("Answer", strAnswer);
+                Log.d("Answer", "" + strAnswer.length());
+                if ("0".equals(strAnswer.trim())) {
                     Log.d("Answer", "Toast");
                     getActivity().runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            Toast.makeText(getActivity(),"搜索没有结果",Toast.LENGTH_LONG).show();
+                            Toast.makeText(getActivity(), "搜索没有结果", Toast.LENGTH_LONG).show();
                         }
                     });
-                }else{
+                } else {
                     Log.d("Answer", "------------");
                     parseJsonQuery(name, answer.toString());
                 }
@@ -173,18 +227,18 @@ public class Fragment2 extends Fragment{
         });
     }
 
-    public void parseJsonQuery(String name,String jsonQuery){
+    public void parseJsonQuery(String name, String jsonQuery) {
         try {
             JSONArray jsonArray = new JSONArray(jsonQuery);
-            for(int i = 0; i < jsonArray.length(); i++){
+            for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
                 String equip_name = name;
                 String equip_pic = jsonObject.getString("img");
                 String equip_intro = jsonObject.getString("con");
-                Intent intent = new Intent(getActivity(),Equip_item_content.class);
-                intent.putExtra("equip_name",equip_name);
-                intent.putExtra("equip_pic",equip_pic);
-                intent.putExtra("equip_intro",equip_intro);
+                Intent intent = new Intent(getActivity(), Equip_item_content.class);
+                intent.putExtra("equip_name", equip_name);
+                intent.putExtra("equip_pic", equip_pic);
+                intent.putExtra("equip_intro", equip_intro);
                 startActivity(intent);
             }
         } catch (JSONException e) {

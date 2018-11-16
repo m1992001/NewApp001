@@ -15,6 +15,7 @@ import cn.jzvd.JzvdStd;
  * Created by Nathen
  * On 2016/02/07 01:20
  */
+
 public class AdapterVideoList extends BaseAdapter {
 
     public static final String TAG = "JZVD";

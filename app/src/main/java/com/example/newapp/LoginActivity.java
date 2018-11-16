@@ -60,8 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                 name1 = input_username.getText().toString().trim();
                 psd1 = input_userpsd.getText().toString().trim();
                 getInitContent();
-//                postRequest(name1,psd1);
-
             }
         });
 

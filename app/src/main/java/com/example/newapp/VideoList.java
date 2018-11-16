@@ -24,9 +24,9 @@ public class VideoList extends AppCompatActivity {
 
         listView = findViewById(R.id.video_list);
         listView.setAdapter(new AdapterVideoList(this,
-                VideoConstant.videoUrls[0],
-                VideoConstant.videoTitles[0],
-                VideoConstant.videoThumbs[0]));
+                VideoConstant.videoUrls,
+                VideoConstant.videoTitles,
+                VideoConstant.videoThumbs));
 
         listView.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override
