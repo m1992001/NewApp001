@@ -53,7 +53,12 @@
             android:screenOrientation="sensor" />
         <activity android:name=".WebView1" />
         <activity android:name=".WebView2" />
-        <activity android:name=".WebView3"></activity>
+        <activity android:name=".WebView3" />
+        <activity android:name=".Evaluate_form" />
+        <activity android:name=".Evaluate_form1" />
+        <activity android:name=".Evaluate_form2" />
+        <activity android:name=".Evaluate_form3" />
+        <activity android:name=".Evaluate_form4"></activity>
     </application>
 
 </manifest>

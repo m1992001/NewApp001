@@ -43,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
     private ArrayList<Content> contentList = new ArrayList<>();
     private StringBuffer result;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,25 +93,25 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     Response response = client.newCall(request).execute();
                     if(response.isSuccessful()){
-                        String state = response.body().string();
-                        Log.d("response",state);
-                        try {
-                            final JSONObject stateJson = new JSONObject(state);
+                                    String state = response.body().string();
+                                    Log.d("response",state);
+                                    try {
+                                        final JSONObject stateJson = new JSONObject(state);
 //                            Log.d("Login", stateJson.get("flag").toString());
-                            if(stateJson.get("flag").equals("success")){
-                                final String reg_class = (String) stateJson.get("title");
-                                LoginActivity.this.runOnUiThread(new Runnable() {
-                                    @Override
-                                    public void run() {
-                                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                                        intent.putExtra("input_username",name1);
-                                        intent.putExtra("reg_class",reg_class);
-                                        Log.d("News", contentList.toString());
-                                        intent.putExtra("news", contentList);
-                                        startActivity(intent);
-                                        finish();
-                                    }
-                                });
+                                        if(stateJson.get("flag").equals("success")){
+                                            final String reg_class = (String) stateJson.get("title");
+                                            LoginActivity.this.runOnUiThread(new Runnable() {
+                                                @Override
+                                                public void run() {
+                                                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                                                    intent.putExtra("input_username",name1);
+                                                    intent.putExtra("reg_class",reg_class);
+                                                    Log.d("News", contentList.toString());
+                                                    intent.putExtra("news", contentList);
+                                                    startActivity(intent);
+                                                    finish();
+                                                }
+                                            });
                             }else{
                                 Log.d("Login", stateJson.get("flag").toString());
                                 LoginActivity.this.runOnUiThread(new Runnable() {

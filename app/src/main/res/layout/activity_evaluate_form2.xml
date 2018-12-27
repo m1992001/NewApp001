@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/form_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="康复评定表"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="JOA颈椎评分"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="患者信息"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年龄"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="性别:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="男"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="女"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/hos_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:hint="住院号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="科室"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/bed_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="床号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="住院类型:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/hos_class"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="门诊"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="住院病人"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="日期："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/mouth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="月"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="日"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="打分项目"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="上肢运动功能（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/joa_up_limb_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/joa_up_limb_act_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_up_limb_act_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能持筷及一般家务劳动，但手笨拙(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_up_limb_act_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="虽手不灵活，但能持筷(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_up_limb_act_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能持勺，但不能持筷(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_up_limb_act_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="自己不能持筷或勺进餐(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="下肢运动功能（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/joa_down_limb_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/joa_down_limb_act_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_down_limb_act_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="平地或上楼行走不用支持物，但下肢不灵活(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_down_limb_act_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="在平地行走可不用支持物，但上楼时需用(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_down_limb_act_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="即使在平地行走也需用支持物(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_down_limb_act_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能行走(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="感觉（6分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="1、上肢"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/joa_feel_up_limb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_up_limb_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_up_limb_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有轻度感觉障碍或麻木(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_up_limb_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有明显感觉障碍(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="2、下肢"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/joa_feel_down_limb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_down_limb_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_down_limb_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有轻度感觉障碍或麻木(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_down_limb_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有明显感觉障碍(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="1、躯干"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/joa_feel_body"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_body_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_body_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有轻度感觉障碍或麻木(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_feel_body_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有明显感觉障碍(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="膀胱功能（3分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/joa_bladder_function"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/joa_bladder_function_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_bladder_function_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度排尿困难，尿频，尿踌躇(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_bladder_function_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="高度排尿困难，尿费力，尿失禁或淋漓(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/joa_bladder_function_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="尿潴留(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="提交"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

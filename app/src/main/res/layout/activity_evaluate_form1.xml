@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/form_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="康复评定表"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Berg平衡量表"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="患者信息"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年龄"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="性别:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="男"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="女"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/hos_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:hint="住院号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="科室"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/bed_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="床号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="住院类型:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/hos_class"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="门诊"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="住院病人"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="日期："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/mouth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="月"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="日"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="打分项目"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="从座位站起(指令：尽量不用手支撑，站起来)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/stand_sit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/stand_sit_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能站起，不用手，不用任何帮助(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_sit_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="起立时用手帮助，不用他人帮助(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_sit_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="用手帮助且试几次才能站起(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_sit_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="起立或站稳时需要很小的帮助(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_sit_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="起立时需要很多帮助(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="无支持站立(指令：请独立站立2分钟)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/no_support_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/no_support_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全站立2分钟(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能站2分钟，但需要监督(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立站立30秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_stand_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要试几次才能独立站30秒(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_stand_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能独立站立30秒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="无支持座位(无靠背，但双脚着地) 指令：两手抱胸坐2分钟(背部无支持，脚可踩在地上、矮凳上)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/no_support_sit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/no_support_sit_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全的保持坐位2分钟(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_sit_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能坐2分钟，需要监督(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_sit_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能坐30秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_sit_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能坐10秒(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_sit_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能保持独立坐位10秒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="从站立位坐下(指令：请坐下)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/from_stand_to_sit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/from_stand_to_sit_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全坐下，仅用手稍微帮助(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/from_stand_to_sit_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="坐下过程用手控制身体下降(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/from_stand_to_sit_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="用下肢后面抵住椅子控制身体下降(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/from_stand_to_sit_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立完成坐下动作，但身体下降过程失控(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/from_stand_to_sit_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="坐下动作需要帮助(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="转移(指令：床→椅转移)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/transform"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/transform_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="可安全的移动，仅需要手稍微帮助(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/transform_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="可安全的移动，但一定需要手帮助(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/transform_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="可完成移动，需要语言提示和/或监督(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/transform_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要一个人帮助完成(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/transform_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要2个人帮助完成(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="无支持闭目站立(指令：闭眼站立10秒)(4分)"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/no_support_close_eyes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/no_support_close_eyes_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全的站立10秒(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_close_eyes_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="在监督下能安全站立10秒(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_close_eyes_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能站立3秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_close_eyes_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能闭眼站立3秒，但能站稳(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_close_eyes_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要帮助防止摔倒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="双脚并拢无支持站立(指令：无支撑下双足并拢站立)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/two_foot_no_support_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/two_foot_no_support_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立将双足并拢，安全站立1分钟(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_no_support_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立将双足并拢，在监督下站立1分钟(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_no_support_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立将双足并拢，但不能保持30秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_no_support_stand_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要帮助才能达到双足并拢体位，但此体位可维持15秒(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_no_support_stand_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要帮助才能达到双足并拢体位，但此体位不能维持15秒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="站立时上肢向前伸展并向前移动(指令：抬起上肢成90度，伸开手指尽可能向前。上肢成90度时，医生将直尺置于手指末端，手指不能触到尺子，患者前倾最大值时手指向前伸的距离。尽量双手前伸避免身体旋转)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/stand_limb_forward"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/stand_limb_forward_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全的前伸大于10英尺(约25.4厘米)(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_limb_forward_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全的前伸大于5英尺(约12.7厘米)(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_limb_forward_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全的前伸大于2英尺(5.1厘米)(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_limb_forward_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能前伸，但需要监督(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_limb_forward_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="前伸时需要帮助以防摔倒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="站立位从地面拾起物品(指令：站立位捡起脚前面的拖鞋/物品)（10分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/stand_pickup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/stand_pickup_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="容易且安全的将物体拾起(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_pickup_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能将物体拾起，但需要监督(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_pickup_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能将物体拾起，手距物体2-5厘米，能独立保持平衡(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_pickup_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能将物体拾起，试图做拾物动作时需要监督(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_pickup_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="在尝试做拾物动作时需要帮助以防摔倒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="站立转身向后看(指令：左转看身后，再右转看身后)(医生在患者背后直接观察，鼓励患者转身)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/stand_trans_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/stand_trans_back_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="双侧均可向后看，且重心转移良好(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_trans_back_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="仅一侧可向后看，另一侧重心转移不好(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_trans_back_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="仅转向侧方，能保持平衡(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_trans_back_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="转体时需要监督(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stand_trans_back_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要帮助以防摔倒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="转身360°(指令：顺时针转身一周，暂停，再逆时针转身一周)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/trans_body_360"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/trans_body_360_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全转体360°，每方向转圈时间在4秒以内(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/trans_body_360_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="单方向转圈在4秒以内(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/trans_body_360_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能转体360°，速度较慢(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/trans_body_360_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要监督或语言提示(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/trans_body_360_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="转体时需帮助(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="无支持站立时一脚放在台阶或凳子上(指令：无支撑下双足交替踏台阶/矮凳4次)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/no_support_one_foot_stool"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/no_support_one_foot_stool_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能安全的站立并在20秒内完成8次踏台(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_one_foot_stool_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立安全的完成8次，时间超过20秒(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_one_foot_stool_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="无帮助下完成4次踏台，需要监督(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_one_foot_stool_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="稍微帮助可完成2次以上踏台阶(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/no_support_one_foot_stool_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="需要帮助以防摔倒或不能尝试此动作(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="两脚一前一后站立(指令：一只脚向前迈步。如果不能直接向前迈步，尽量向前迈远点，前脚的脚跟在后脚的脚趾前，步长需超过脚长，步宽需约等于患者的正常步宽)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/two_foot_forward_back"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/two_foot_forward_back_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立放置踵趾位，并保持30秒(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_forward_back_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立将一足置于另一足之前保持30秒(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_forward_back_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能迈一小步并保持30秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_forward_back_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="迈步需要帮助，但能保持前后位站立15秒(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/two_foot_forward_back_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="迈步或站立时失去平衡(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="单腿站立(指令：无支撑下单脚站尽可能长时间)（4分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/single_leg_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/single_leg_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立抬起一侧下肢，并保持10秒以上(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/single_leg_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立抬起一侧下肢，保持5-10秒(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/single_leg_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能独立抬起一侧下肢，保持3秒以上(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/single_leg_stand_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能尝试抬起一侧下肢，不能保持3秒，但能独立保持站立(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/single_leg_stand_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能尝试此动作(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="提交"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

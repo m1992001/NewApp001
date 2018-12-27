@@ -1,0 +1,643 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/form_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="康复评定表"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Fugl-Meyer平衡量表"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="患者信息"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年龄"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="性别:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="男"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="女"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/hos_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:hint="住院号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="科室"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/bed_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="床号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="住院类型:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/hos_class"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="门诊"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="住院病人"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="日期："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/mouth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="月"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="日"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="打分项目"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="无支撑坐位（2分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_no_support_site"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_no_support_site_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能保持平衡，超过5分钟(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_no_support_site_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="能保持平衡，但时间短，少于5分钟(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_no_support_site_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能保持平衡(0分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="健侧展翅反应（2分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_flank_wing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_flank_wing_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="反应正常(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_flank_wing_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="健肢有不完全反应(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_flank_wing_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="被推动时，无肩外展及伸肘(0分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="患侧展翅反应（3分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_pain_flank_wing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_pain_flank_wing_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="患肢有正常反应(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_pain_flank_wing_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="患肢有不完全反应(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_pain_flank_wing_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="被推动时，患肢无外展级伸肘(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="支撑下站立"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_support_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_support_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1人帮助站立1分钟(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_support_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="完全在他人帮助下站立(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_support_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能站立(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="无支撑站立(2分)"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_no_support_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_no_support_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="站立平衡多于1分钟(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_no_support_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="站立少于1分钟或身体摇摆(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_no_support_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不能站立(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="健肢站立（2分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_heal_limb_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_heal_limb_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="维持平衡多余9秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_heal_limb_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="维持平衡4-9秒(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_heal_limb_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="维持平衡少于1-2秒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="患肢站立（2分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/FM_pain_limb_stand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/FM_pain_limb_stand_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="维持平衡多于9秒(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_pain_limb_stand_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="维持平衡4-9秒(1分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/FM_pain_limb_stand_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="维持平衡少于1-2秒(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="提交"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

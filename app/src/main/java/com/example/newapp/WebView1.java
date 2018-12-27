@@ -15,6 +15,6 @@ public class WebView1 extends AppCompatActivity {
         webView1.getSettings().setJavaScriptEnabled(true);
         webView1.getSettings().setDomStorageEnabled(true);
         webView1.setWebViewClient(new WebViewClient());
-        webView1.loadUrl("http://192.168.1.116:4399/");
+        webView1.loadUrl(HttpUtil.IP);
     }
 }

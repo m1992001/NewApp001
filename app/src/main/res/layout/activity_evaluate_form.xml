@@ -1,0 +1,770 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/form_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="康复评定表"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="AOFAS踝与后足功能评分"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="患者信息"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年龄"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="性别:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="男"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="女"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/hos_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:hint="住院号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="科室"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/bed_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="床号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="住院类型:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/hos_class"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="门诊"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="住院病人"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="日期："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/mouth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="月"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="日"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="打分项目"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="项目：疼痛（40分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/pain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/pain_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="无(40分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/pain_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度，偶尔(30分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/pain_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度，每天都有(20分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/pain_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重，几乎持续性(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="功能和自主活动、支撑情况（10分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/function"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/function_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="无受限，不需要辅助支撑(10分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/function_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="日常活动不受限，娱乐活动受限，不需要辅助支撑(7分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/function_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="日常活动和娱乐活动受限，需要手杖支撑(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/function_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="日常活动和娱乐活动严重受限，需要助行器、拐杖、轮椅、支具(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="最大步行距离(街区)（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/step_distance"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/step_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text=">6个(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/step_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="4~6个(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/step_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="1~3个(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/step_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="小于1个(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="地面步行（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/ground_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/ground_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="任何地面无困难(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/ground_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="崎岖不平的地面上行走、上台阶（包括爬梯子）有些困难(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/ground_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="崎岖不平的地面上行走、上台阶（包括爬梯子）非常困难(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="异常步态（8分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/abnormal_step"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/abnor_step_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="无，轻度(8分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/abnor_step_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="明显(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/abnor_step_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="非常显著(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="前后活动(屈/伸)(8分)"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/forward_back_bend_and_stretch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/fb_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常或轻度受限(30°或以上)(8分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/fb_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度受限(15°~29°)(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/fb_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重受限（小于15°)(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="后足运动（内翻加外翻）（6分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/back_foot_act"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/backfoot_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="正常或轻度受限（正常的75%~100%）(6分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/backfoot_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度受限（正常的25%~74%）(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/backfoot_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重受限（正常的25%以下）(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="踝与后足的稳定性（前后、内外翻）（8分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/back_foot_stable"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/stable_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="稳定(8分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/stable_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="明显不稳定(0分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="足部对线（10分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/foot_diagonal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/foot_diagonal_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="良好，跖屈足，踝-后足对线良好(10分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/foot_diagonal_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="可，跖屈足，踝-后足对线有一定程度的对线不良，无症状(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/foot_diagonal_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="差，非跖屈足，踝-后足对线严重对线不良，有症状(0分)"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="提交"
+                android:textColor="#000000"/>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

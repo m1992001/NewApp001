@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">NewApp</string>
-    <string name="title_home">首页</string>
-    <string name="title_lib">资料库</string>
-    <string name="title_my">我的</string>
+    <string name="app_name">专业脑瘫康复管理系统平台</string>
+    <string name="title_home">新闻资讯</string>
+    <string name="title_lib">学习示教</string>
+    <string name="title_my">工作站</string>
     <string name="abc_search_hint">请输入医疗设备的名称</string>
 </resources>

@@ -1,0 +1,1013 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/toolbar_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/form_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:text="康复评定表"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </android.support.v7.widget.Toolbar>
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Levine腕管综合征问卷"
+                android:textColor="#000000"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:text="患者信息"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="姓名"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true">
+
+                    <EditText
+                        android:id="@+id/age"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年龄"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="性别:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/gender"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="10dp"
+
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/male"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="男"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/female"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="女"
+                        android:textSize="18sp" />
+                </RadioGroup>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/hos_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:hint="住院号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="4dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/division"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="科室"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/bed_number"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="床号"
+                        android:inputType="text" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_weight="2"
+                    android:gravity="center_vertical"
+                    android:text="住院类型:"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/hos_class"
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginRight="8dp"
+                    android:layout_weight="4"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="门诊"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/rb_doctor2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2"
+                        android:text="住院病人"
+                        android:textSize="18sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:text="日期："
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/year"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="年"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/mouth"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="月"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/day"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="日"
+                        android:inputType="date" />
+                </android.support.design.widget.TextInputLayout>
+
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="打分项目"
+                android:textColor="#000000"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="晚上你的手或腕疼痛程度如何？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q1_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="非常疼痛(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q1_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重疼痛(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q1_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度疼痛(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q1_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度疼痛(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q1_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="腕上的手或腕不疼痛(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="在过去的2周里，手或腕疼痛经常把你弄醒吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q2_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5次以上(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q2_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有过4、5次(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q2_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有过2、3次(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q2_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="曾经有过(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q2_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="从没有过(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="白天你的手或腕出现过典型疼痛吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q3_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="白天有非常严重的疼痛(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q3_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="白天有严重疼痛(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q3_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="白天有中度疼痛(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q3_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="白天有轻微疼痛(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q3_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="白天从来没有过疼痛(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="白天你的手或腕出现的频率如何？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q4_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="持续性(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q4_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="每天5次以上(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q4_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="每天3、4次(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q4_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="每天1、2次(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q4_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="从没有过(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="白天疼痛发作的平均时间是多少？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q5_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="持续一整天疼痛(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q5_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="大于60分钟(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q5_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10~60分钟(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q5_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="10分钟以内(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q5_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="白天从来不痛(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="你的手感到麻木吗(感觉缺失)？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q6_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="非常严重的麻木(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q6_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重麻木(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q6_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度麻木(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q6_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度麻木(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q6_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="没有(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="你的手、腕感到无力吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q7_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="非常严重的无力(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q7_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重无力(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q7_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度无力(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q7_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度无力(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q7_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不感到无力(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="你的手上有刺痛样的感觉吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q8_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="非常严重的刺痛(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q8_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重刺痛(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q8_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度刺痛(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q8_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度刺痛(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q8_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="不感到刺痛(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="在过去的两周里，手或腕麻木或刺痛经常把你弄醒吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q9_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="非常严重(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q9_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q9_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q9_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q9_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="未感觉到晚上有麻木或刺痛(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="在过去的两周里，手或腕麻木或刺痛经常把你弄醒吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q10_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="5次以上(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q10_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有过4、5次(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q10_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有过2、3次(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q10_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="曾经有过(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q10_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="从没有过(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:gravity="center_vertical"
+                    android:text="你握拳和使用小件物品（如钥匙或铅笔）有困难吗？（5分）"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <RadioGroup
+                    android:id="@+id/Levine_Q11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q11_a"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="有非常严重的困难(5分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q11_b"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="严重困难(4分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q11_c"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="中度困难(3分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q11_d"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="轻度困难(2分)"
+                        android:textSize="18sp" />
+
+                    <RadioButton
+                        android:id="@+id/Levine_Q11_e"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="没有困难(1分)"
+                        android:textSize="18sp" />
+
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:text="提交"
+                android:textColor="#000000" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -2,12 +2,14 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 28
-    defaultConfig {
+    buildToolsVersion '28.0.3'
+    defaultConfig {//ca156681d57047f92a70e0e6cb2dd2a8e079abf0
         applicationId "com.example.newapp"
         minSdkVersion 15
-        targetSdkVersion 28
+        targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        resValue "string", "preferences_provider_authority", "${applicationId}.preferencesprovider"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -19,7 +21,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0-alpha3'
     implementation 'com.android.support:design:28.0.0-alpha3'
     implementation 'com.android.support.constraint:constraint-layout:1.1.2'
@@ -39,4 +41,9 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile project(':RHttp')
+    /*动态权限*/
+    compile 'pub.devrel:easypermissions:0.4.2'
+    //存储
+    compile 'com.mengdd.preferencesprovider:preferences-provider:0.2.0'
 }

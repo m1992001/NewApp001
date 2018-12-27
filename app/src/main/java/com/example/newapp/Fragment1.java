@@ -48,20 +48,12 @@ public class Fragment1 extends Fragment{
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
-//        RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
-//        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
-//        recyclerView.setLayoutManager(layoutManager);
-//        contentAdapter = new ContentAdapter(contentList);
-//        recyclerView.setAdapter(contentAdapter);
-//        Log.d("FragmentLife", "onCreate");
     }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-//        getInitContent();
-//        contentList = (ArrayList<Content>) getActivity().getIntent().getSerializableExtra("news");
         Log.d("FragmentLife", contentList.toString());
         RecyclerView recyclerView = getActivity().findViewById(R.id.recycler_view_fragment);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getContext());
@@ -122,28 +114,6 @@ public class Fragment1 extends Fragment{
         }).start();
     }
 
-//    private void getInitContent() {
-//        HttpUtil.getHttpRequest(HttpUtil.IP + "/app/news", new okhttp3.Callback() {
-//            @Override
-//            public void onFailure(Call call, IOException e) {
-//                Log.d("Fragment1", "服务器访问失败");
-//            }
-//
-//            @Override
-//            public void onResponse(Call call, Response response) {
-//                try {
-//                    result = new StringBuffer();
-//                    result.append(response.body().string());
-////                    Log.d("Fragment1", "result; " + result.toString());
-//                    parseJsonObject(result.toString());
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//        });
-//    }
-//
-//
     public void parseJsonObject(String jsonData) {
         try {
             JSONArray jsonArray = new JSONArray(jsonData);

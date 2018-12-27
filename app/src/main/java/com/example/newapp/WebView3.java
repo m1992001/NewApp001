@@ -15,6 +15,6 @@ public class WebView3 extends AppCompatActivity {
         webView1.getSettings().setJavaScriptEnabled(true);
         webView1.getSettings().setDomStorageEnabled(true);
         webView1.setWebViewClient(new WebViewClient());
-        webView1.loadUrl("192.168.100.236:4399/month");
+        webView1.loadUrl(HttpUtil.IP + "/month");
     }
 }

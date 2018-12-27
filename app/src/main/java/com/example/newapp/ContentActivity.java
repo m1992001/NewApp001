@@ -41,7 +41,6 @@ public class ContentActivity extends AppCompatActivity {
         }
         collapsingToolbar.setTitle(content_Name);
         Glide.with(this).load(HttpUtil.IP + content_Image).into(contentImageView);
-
         contentText.setText(content_Text);
     }
 

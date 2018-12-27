@@ -59,8 +59,6 @@ public class ContentAdapter extends RecyclerView.Adapter<ContentAdapter.ViewHold
             public void onClick(View view) {
                 int position = holder.getAdapterPosition();
                 final Content content = mContent.get(position);
-//                final CountDownLatch latch = new CountDownLatch(1);
-//                Log.d("ContentAdapter_con_id", content.getContentId());
                 if("".equals(content.getContentId())) {
                     HttpUtil.getHttpRequest(HttpUtil.IP + "/app/news/" + content.getName(), new Callback() {
                         @Override

@@ -64,20 +64,42 @@ public class Fragment3 extends Fragment {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 MyListItem myListItem = myListItems.get(i);
                 switch (myListItem.getItemName()) {
-                    case "报表数据分析":
-                        Log.d("Switch",myListItem.getItemName());
-                        Intent intent = new Intent(getActivity(),WebView1.class);
+                    case "病人治疗信息":
+                        Log.d("Switch", myListItem.getItemName());
+                        Intent intent = new Intent(getActivity(), WebView1.class);
                         startActivity(intent);
                         break;
-                    case "康复效率分析":
+                    case "医生工作量信息":
                         Toast.makeText(getContext(), myListItem.getItemName(), Toast.LENGTH_LONG);
-                        Intent intent1 = new Intent(getActivity(),WebView2.class);
-                        Log.d("Switch",myListItem.getItemName());
+                        Intent intent1 = new Intent(getActivity(), WebView2.class);
+                        Log.d("Switch", myListItem.getItemName());
+                        startActivity(intent1);
                         break;
-                    case "康复投入信息":
+                    case "本月康复信息":
                         Toast.makeText(getContext(), myListItem.getItemName(), Toast.LENGTH_LONG);
-                        Intent intent2 = new Intent(getActivity(),WebView3.class);
-                        Log.d("Switch",myListItem.getItemName());
+                        Intent intent2 = new Intent(getActivity(), WebView3.class);
+                        Log.d("Switch", myListItem.getItemName());
+                        startActivity(intent2);
+                        break;
+                    case "Berg平衡量表":
+                        Intent intent3 = new Intent(getActivity(), Evaluate_form1.class);
+                        startActivity(intent3);
+                        break;
+                    case "JOA颈椎评分":
+                        Intent intent4 = new Intent(getActivity(), Evaluate_form2.class);
+                        startActivity(intent4);
+                        break;
+                    case "Fugl-Meyer平衡量表":
+                        Intent intent5 = new Intent(getActivity(), Evaluate_form3.class);
+                        startActivity(intent5);
+                        break;
+                    case "Levine腕管综合征问卷":
+                        Intent intent6 = new Intent(getActivity(), Evaluate_form4.class);
+                        startActivity(intent6);
+                        break;
+                    case "AOFAS踝与后足功能评分":
+                        Intent intent7 = new Intent(getActivity(), Evaluate_form.class);
+                        startActivity(intent7);
                         break;
                     default:
                 }
@@ -117,8 +139,16 @@ public class Fragment3 extends Fragment {
         myListItems.add(item3);
         MyListItem item4 = new MyListItem("本月康复信息", R.drawable.my_health);
         myListItems.add(item4);
-//        MyListItem item5 = new MyListItem("设置", R.drawable.my_setting);
-//        myListItems.add(item5);
+        MyListItem item5 = new MyListItem("AOFAS踝与后足功能评分", R.drawable.form);
+        myListItems.add(item5);
+        MyListItem item6 = new MyListItem("Berg平衡量表", R.drawable.form);
+        myListItems.add(item6);
+        MyListItem item7 = new MyListItem("JOA颈椎评分", R.drawable.form);
+        myListItems.add(item7);
+        MyListItem item8 = new MyListItem("Fugl-Meyer平衡量表", R.drawable.form);
+        myListItems.add(item8);
+        MyListItem item9 = new MyListItem("Levine腕管综合征问卷", R.drawable.form);
+        myListItems.add(item9);
 
     }
 }
