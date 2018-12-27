@@ -78,7 +78,7 @@ public class Login_Presenter extends BasePresenter<Login_View, LifecycleProvider
         new Appservices().login(userName, password, getActivity(), httpCallback);
 
     }
-    public void getinitContent(){
+    public void getinitContent(){//获取新闻资讯
         if (getView() != null)
             // getView().showLoading();
             ((BaseActivity)getActivity()).showLoading();
