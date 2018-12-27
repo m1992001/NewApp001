@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class Login_Presenter extends BasePresenter<Login_View, LifecycleProvider> {
     private final String TAG = Login_Presenter.class.getSimpleName();
+    private final String test="";
 
     public Login_Presenter(Login_View view, LifecycleProvider activity) {
         super(view, activity);
@@ -78,7 +79,7 @@ public class Login_Presenter extends BasePresenter<Login_View, LifecycleProvider
         new Appservices().login(userName, password, getActivity(), httpCallback);
 
     }
-    public void getinitContent(){//获取新闻资讯
+    public void getinitContent(){//
         if (getView() != null)
             // getView().showLoading();
             ((BaseActivity)getActivity()).showLoading();
